@@ -1,0 +1,4 @@
+define(['moduleA'], function(moduleA) {
+
+
+});
