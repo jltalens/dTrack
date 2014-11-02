@@ -1,0 +1,12 @@
+{
+    "name": "dgraph",
+    "version": "0.0.1",
+    "description": "Dependency tracker for AMD modules",
+    "author": "Jose Talens <jltalens@hotmail.com>",
+    "dependencies": {
+        "esprima": "~1.2.2"
+    },
+    "devDependencies": {
+        "mocha": "~1.4"
+    }
+}
