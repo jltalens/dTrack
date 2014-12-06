@@ -10,6 +10,10 @@
                 assert.equal(typeof content, 'string');
                 assert.equal(content[3], 'd');
             });
+            it('should return -1 if the file doesn\'t exists', function(){
+                var content = dTrack.fs.open('I dont exists');
+                assert.equal(content, -1);
+            });
         });
 
         describe('Parser module', function() {
@@ -61,6 +65,26 @@
                     assert.equal(map.EventViewAdapter,'app/views/EventViewAdapter');
                 });
             });
+        });
+
+        describe('Graph module', function(){
+            describe('AMD dependencies', function(){
+                xit('should be able to accept a config file', function(){
+                    var dependencies = dTrack.graph.readFromFile('support/sampleAppConf/app.js',
+                        'support/sampleAppConf/conf.js');
+                    assert(dependencies);
+                });
+                it('should be able to the first level dependencies', function(){
+                    var dependencies = dTrack.graph.readFromFile('support/sampleApp/app.js');
+                    //first level
+                    assert(dependencies.hasOwnProperty('app.js'));
+                    assert(dependencies['app.js'].jquery);
+                    assert(dependencies['app.js']['./route/Router']);
+                    assert(dependencies['app.js']['./controller/PageController']);
+                    assert(dependencies['app.js']['./controller/BasePage']);
+                });
+            });
+
         });
     });
 })();
