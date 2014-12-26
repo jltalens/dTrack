@@ -69,10 +69,18 @@
 
         describe('Graph module', function(){
             describe('AMD dependencies', function(){
-                xit('should be able to accept a config file', function(){
-                    var dependencies = dTrack.graph.readFromFile('support/sampleAppConf/app.js',
-                        'support/sampleAppConf/conf.js');
-                    assert(dependencies);
+                it('should be able to accept a config file', function(){
+                    var dependencies = dTrack.graph.readFromFile('support/sampleAppConfig/app.js',
+                        'support/sampleAppConfig/config.js');
+                    assert(dependencies.hasOwnProperty('app.js'));
+                    assert(dependencies['app.js'].jquery);
+                    assert(dependencies['app.js'].Router);
+                    assert(dependencies['app.js'].PageController);
+                    assert(dependencies['app.js'].BasePage);
+                    //second level
+                    assert(dependencies['app.js'].PageController.Pages);
+                    assert(dependencies['app.js'].PageController.BasePage);
+                    assert(dependencies['app.js'].PageController.Repository);
                 });
                 it('should be able to the first level dependencies', function(){
                     var dependencies = dTrack.graph.readFromFile('support/sampleApp/app.js');
