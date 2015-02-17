@@ -57,12 +57,29 @@
         describe('Helper module', function() {
             describe('requirejs functions', function(){
                 it('should be able to get the require paths from the keys', function(){
-                    var map = dTrack.helper.requireMaps('./support/requireConfig.js');
+                    var dep = dTrack.builders.dependencyBuilder.getBuilder('AMD');
+                    var map = dep.requireMaps('./support/requireConfig.js');
                     assert.equal(Object.keys(map).length, 32);
                     assert(map.hasOwnProperty('Backbone'));
                     assert.equal(map.Backbone,'vendor/backbone/backbone-1.1.2.min');
                     assert(map.hasOwnProperty('EventViewAdapter'));
                     assert.equal(map.EventViewAdapter,'app/views/EventViewAdapter');
+                });
+            });
+            describe('helpers functions', function(){
+                it('should be able to find index in object struct recursivelly', function(){
+                    var assertionStruct = {
+                        level1: {
+                            level2: {
+                                level3: {
+
+                                }
+                            }
+                        }
+                    };
+                    var pointerToIndex = dTrack.helper.utils.findLevelInStruct(assertionStruct, 'level3');
+                    pointerToIndex.level3 = 'found';
+                    assert(assertionStruct.level1.level2.level3 === 'found');
                 });
             });
         });
@@ -91,8 +108,19 @@
                     assert(dependencies['app.js']['./controller/PageController']);
                     assert(dependencies['app.js']['./controller/BasePage']);
                 });
+//                it('should track a complex tree', function(){
+//                    var kk = dTrack.graph.readFromFile('tmp/app/app.js', 'tmp/global/config.js', 'tmp');
+//                });
             });
 
+        });
+        describe('Dependency strategy module', function(){
+           describe('AMD dependency builder', function(){
+               it('should choose the AMD dependency builder based on string', function(){
+                   var dependencyBuilder = dTrack.builders.dependencyBuilder.getBuilder('AMD');
+                   assert(dependencyBuilder.hasOwnProperty('getAMDDependencies'));
+               });
+           });
         });
     });
 })();
