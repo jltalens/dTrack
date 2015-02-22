@@ -87,7 +87,7 @@
         describe('Graph module', function(){
             describe('AMD dependencies', function(){
                 it('should be able to accept a config file', function(){
-                    var dependencies = dTrack.graph.readFromFile('support/sampleAppConfig/app.js',
+                    var dependencies = dTrack.graph.readFromFile('AMD','support/sampleAppConfig/app.js',
                         'support/sampleAppConfig/config.js');
                     assert(dependencies.hasOwnProperty('app.js'));
                     assert(dependencies['app.js'].jquery);
@@ -100,7 +100,7 @@
                     assert(dependencies['app.js'].PageController.Repository);
                 });
                 it('should be able to the first level dependencies', function(){
-                    var dependencies = dTrack.graph.readFromFile('support/sampleApp/app.js');
+                    var dependencies = dTrack.graph.readFromFile('AMD','support/sampleApp/app.js');
                     //first level
                     assert(dependencies.hasOwnProperty('app.js'));
                     assert(dependencies['app.js'].jquery);
@@ -118,7 +118,7 @@
            describe('AMD dependency builder', function(){
                it('should choose the AMD dependency builder based on string', function(){
                    var dependencyBuilder = dTrack.builders.dependencyBuilder.getBuilder('AMD');
-                   assert(dependencyBuilder.hasOwnProperty('getAMDDependencies'));
+                   assert(dependencyBuilder.hasOwnProperty('getDependencies'));
                });
            });
         });
