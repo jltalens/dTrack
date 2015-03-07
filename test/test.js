@@ -127,20 +127,24 @@
            describe('Dot module basic layout', function() {
                it('should write output in doc format', function() {
                    var dependencies = dTrack.graph.readFromFile('AMD', 'support/sampleAppConfig/app.js','support/sampleAppConfig/config.js');
-                   var dotModule = dTrack.layout.dot(dependencies,'dependencies');
-                   var output = 'digraph dependencies { "app.js" -> "jquery"; "app.js" -> "Router"; ' +
-                           '"app.js" -> "PageController"; ' +
-                           '"app.js" -> "BasePage"; ' +
-                           '"Router" -> "Backbone"; ' +
-                           '"PageController" -> "Pages"; ' +
-                           '"PageController" -> "BasePage"; ' +
-                           '"PageController" -> "Repository"; ' +
-                           '"PageController" -> "Repository"; ' +
+                   var output = 'digraph dependencies { "app.js" -> "jquery";"app.js" -> "Router";' +
+                           '"app.js" -> "PageController";' +
+                           '"app.js" -> "BasePage";' +
+                           '"Router" -> "Backbone";' +
+                           '"PageController" -> "Pages";' +
+                           '"PageController" -> "BasePage";' +
+                           '"PageController" -> "Repository";' +
+                           '"BasePage" -> "PageCommon";' +
+                           '"BasePage" -> "Providers";' +
+                           '"PageCommon" -> "jquery";' +
+                           '"PageCommon" -> "underscore";' +
+                           '"Providers" -> "jquery";' +
+                           '"Providers" -> "Repository"; }';
 
-                   //var dotModule = dTrack.layout.dot(dependencies);
-                   console.log(dependencies);
-               })
-           })
+                   var dotModule = dTrack.layout.dot(dependencies, 'dependencies');
+                   assert.equal(output, dotModule);
+               });
+           });
         });
     });
 })();
