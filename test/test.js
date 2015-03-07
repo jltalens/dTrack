@@ -6,7 +6,7 @@
     describe('dTrack', function(){
         describe('File module', function(){
             it('Should be able to return the file content', function(){
-                var content = dTrack.fs.open('./support/testFile.js');
+                var content = dTrack.fs.open('./support/testFile.txt');
                 assert.equal(typeof content, 'string');
                 assert.equal(content[3], 'd');
             });
