@@ -8,5 +8,8 @@
     },
     "devDependencies": {
         "mocha": "~1.4"
+    },
+    "scripts": {
+        "test": "jshint --reporter unix test lib && cd test && ../node_modules/mocha/bin/mocha"
     }
 }
