@@ -126,7 +126,8 @@
         describe('Dot integration', function() {
            describe('Dot module basic layout', function() {
                it('should write output in doc format', function() {
-                   var dependencies = dTrack.graph.readFromFile('AMD', 'support/sampleAppConfig/app.js','support/sampleAppConfig/config.js');
+                   var dependencies = dTrack.graph.readFromFile('AMD', 'support/sampleAppConfig/app.js',
+                    'support/sampleAppConfig/config.js');
                    var output = 'digraph dependencies { "app.js" -> "jquery";"app.js" -> "Router";' +
                            '"app.js" -> "PageController";' +
                            '"app.js" -> "BasePage";' +
