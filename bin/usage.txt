@@ -1,0 +1,1 @@
+Usage: dTrack [entry file] {config file}
