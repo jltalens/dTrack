@@ -23,7 +23,7 @@
                 assert(tokens[0].hasOwnProperty('type'));
                 assert(tokens[0].hasOwnProperty('value'));
             });
-            describe('Get amd modules dependencies', function() {
+            describe('Get AMD modules dependencies', function() {
                 it('should be able to recieve the function name to process', function(){
                     var tokens = dTrack.parser.getTokens('./support/config.js');
                     var args = dTrack.parser.argumentsFor('requirejs', tokens);
@@ -115,11 +115,13 @@
 
         });
         describe('Dependency strategy module', function(){
-           describe('AMD dependency builder', function(){
-               it('should choose the AMD dependency builder based on string', function(){
-                   var dependencyBuilder = dTrack.builders.dependencyBuilder.getBuilder('AMD');
-                   assert(dependencyBuilder.hasOwnProperty('getDependencies'));
-               });
+           it('should choose the AMD dependency builder based on string', function(){
+               var dependencyBuilder = dTrack.builders.dependencyBuilder.getBuilder('AMD');
+               assert.equal(dependencyBuilder.type, 'AMD');
+           });
+           it('should choose the CommonsJS depdendency build based on string', function() {
+                var dependencyBuilder = dTrack.builders.dependencyBuilder.getBuilder('CommonJS');
+                assert.equal(dependencyBuilder.type, 'CommonJS');
            });
         });
 
@@ -146,6 +148,10 @@
                    assert.equal(output, dotModule);
                });
            });
+        });
+
+        describe('CommonJS module', function(){
+            it('should ')
         });
     });
 })();
