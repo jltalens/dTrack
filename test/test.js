@@ -156,7 +156,7 @@
                     var tokens = dTrack.parser.getTokens(__dirname + '/support/CommonJS/basicRequireUse.js');
                     var args = dTrack.parser.argumentsFor('require', tokens);
                     assert(args instanceof Array);
-                    assert.equal(args[0], 'file');
+                    assert.equal(args[0], 'fs');
                 });
             });
         });
