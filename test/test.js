@@ -158,6 +158,16 @@
                     assert(args instanceof Array);
                     assert.equal(args[0], 'fs');
                 });
+
+                it('should be able to capture all the usages of the require inside a file', function() {
+                    var tokens =  dTrack.parser.getTokens(__dirname + '/support/CommonJS/ReactIsomorphic.js');
+                    var args = dTrack.parser.argumentsFor('require', tokens);
+                    assert(args instanceof Array);
+                    assert.equal(args[0], 'ReactChildren');
+                    assert.equal(args[1], 'ReactComponent');
+                    assert.equal(args[7], 'Object.assign');
+                    assert.equal(args[8], 'onlyChild');
+                });
             });
         });
     });
