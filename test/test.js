@@ -130,19 +130,19 @@
                it('should write output in doc format', function() {
                    var dependencies = dTrack.graph.readFromFile('AMD', __dirname + '/support/sampleAppConfig/app.js',
                     __dirname + '/support/sampleAppConfig/config.js');
-                   var output = 'digraph dependencies { "app.js" -> "jquery";"app.js" -> "Router";' +
-                           '"app.js" -> "PageController";' +
-                           '"app.js" -> "BasePage";' +
-                           '"Router" -> "Backbone";' +
-                           '"PageController" -> "Pages";' +
-                           '"PageController" -> "BasePage";' +
-                           '"PageController" -> "Repository";' +
-                           '"BasePage" -> "PageCommon";' +
-                           '"BasePage" -> "Providers";' +
-                           '"PageCommon" -> "jquery";' +
-                           '"PageCommon" -> "underscore";' +
-                           '"Providers" -> "jquery";' +
-                           '"Providers" -> "Repository"; }';
+                   var output = 'digraph dependencies { "app.js" -> "jquery" [dir=back];"app.js" -> "Router" [dir=back];' +
+                           '"app.js" -> "PageController" [dir=back];' +
+                           '"app.js" -> "BasePage" [dir=back];' +
+                           '"Router" -> "Backbone" [dir=back];' +
+                           '"PageController" -> "Pages" [dir=back];' +
+                           '"PageController" -> "BasePage" [dir=back];' +
+                           '"PageController" -> "Repository" [dir=back];' +
+                           '"BasePage" -> "PageCommon" [dir=back];' +
+                           '"BasePage" -> "Providers" [dir=back];' +
+                           '"PageCommon" -> "jquery" [dir=back];' +
+                           '"PageCommon" -> "underscore" [dir=back];' +
+                           '"Providers" -> "jquery" [dir=back];' +
+                           '"Providers" -> "Repository" [dir=back]; }';
 
                    var dotModule = dTrack.layout.dot(dependencies, 'dependencies');
                    assert.equal(output, dotModule);
@@ -151,7 +151,14 @@
         });
 
         describe('CommonJS module', function(){
-            //it('should ')
+            describe('Capture requires inside a file', function () {
+                it('should be able to recover the argument of a require inside a file', function() {
+                    var tokens = dTrack.parser.getTokens(__dirname + '/support/CommonJS/basicRequireUse.js');
+                    var args = dTrack.parser.argumentsFor('require', tokens);
+                    assert(args instanceof Array);
+                    assert.equal(args[0], 'file');
+                });
+            });
         });
     });
 })();

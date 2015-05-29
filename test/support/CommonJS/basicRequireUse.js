@@ -1,3 +1,3 @@
-/**
- * Created by jltalens on 29/05/15.
- */
+(function(){
+    var file = require('fs');
+})();
