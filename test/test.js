@@ -2,7 +2,7 @@
     'use strict';
     var assert = require('assert');
     assert.ok(true);
-    var dTrack = require('../index.js');
+    var dTrack = require(__dirname + '/../index.js');
     describe('dTrack', function(){
         describe('File module', function(){
             it('Should be able to return the file content', function(){
