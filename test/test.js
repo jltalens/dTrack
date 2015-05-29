@@ -168,6 +168,32 @@
                     assert.equal(args[7], 'Object.assign');
                     assert.equal(args[8], 'onlyChild');
                 });
+
+                it('should be able to get the dependencies through the builder', function() {
+                    var builder = dTrack.builders.dependencyBuilder.getBuilder('CommonJS'),
+                        args = builder.getDependencies(__dirname + '/../index.js');
+                    assert.equal(args[0], './lib/fs');
+                    assert.equal(args[1], './lib/parser');
+                    assert.equal(args[5], './lib/layout');
+                });
+            });
+
+            describe('Follow relative dependencies', function () {
+                it('should be able to follow file inter-dependencies', function() {
+                    var dependencies = dTrack.graph.readFromFile('CommonJS', __dirname + '/support/CommonJS/inter-dependencies/index.js');
+                    assert(dependencies.hasOwnProperty('index.js'));
+                    assert(dependencies['index.js'].hasOwnProperty('./firstLevel/someFile'));
+                    assert(dependencies['index.js']['./firstLevel/someFile'].hasOwnProperty('./fileSameLevel'));
+                });
+            });
+
+            describe('Follow absolute dependencies', function () {
+                it('should not follow core modules', function() {
+
+                });
+                it('should follow non-core modules with deph restriction', function() {
+
+                });
             });
         });
     });
