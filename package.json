@@ -1,18 +1,19 @@
 {
-    "name": "dTrack",
-    "version": "0.0.1",
-    "description": "Dependency graph builder for JS projects",
-    "author": "Jose Talens <talens.joseluis@gmail.com>",
-    "main": "index.js",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/jltalens/dTrack"
-    },
-    "dependencies": {
-        "esprima": "~1.2.2"
-    },
-    "devDependencies": {
-        "mocha": "~1.4"
-    },
-    "license": "MIT"
+  "name": "dTrack",
+  "version": "0.0.1",
+  "description": "Dependency graph builder for JS projects",
+  "author": "Jose Talens <talens.joseluis@gmail.com>",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jltalens/dTrack"
+  },
+  "dependencies": {
+    "esprima": "~1.2.2"
+  },
+  "devDependencies": {
+    "babel": "^5.8.23",
+    "mocha": "~1.4"
+  },
+  "license": "MIT"
 }
