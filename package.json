@@ -11,6 +11,9 @@
   "dependencies": {
     "esprima": "~1.2.2"
   },
+  "scripts" :{
+    "test": "mocha --compilers js:babel/register **/*Spec.js"
+  },
   "devDependencies": {
     "babel": "^5.8.23",
     "mocha": "~1.4"
