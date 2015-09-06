@@ -1,4 +1,0 @@
-define(['moduleA'], function(moduleA) {
-
-
-});

@@ -1,12 +1,9 @@
 {
     "name": "dTrack",
     "version": "0.0.1",
-    "description": "Dependency tracker JS projects",
+    "description": "Dependency graph builder for JS projects",
     "author": "Jose Talens <talens.joseluis@gmail.com>",
     "main": "index.js",
-    "bin": {
-        "dtrack": "bin/cmd.js"
-    },
     "repository": {
         "type": "git",
         "url": "https://github.com/jltalens/dTrack"
@@ -16,9 +13,6 @@
     },
     "devDependencies": {
         "mocha": "~1.4"
-    },
-    "scripts": {
-        "test": "jshint --reporter unix test lib && ./node_modules/mocha/bin/mocha test"
     },
     "license": "MIT"
 }
