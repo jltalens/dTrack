@@ -13,4 +13,10 @@ describe("ES6 Compiling", function(){
         var x = new Fraction(5);
         assert(typeof x === "object");
     });
+
+    it("should modify the array", function () {
+        var m = [1,2,3];
+        m = m.map(v => v + 1);
+        assert.deepEqual(m, [2,3,4], `It should output [2,3,4]: ${m}`);
+    });
 });
