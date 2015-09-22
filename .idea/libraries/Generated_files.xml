@@ -2,10 +2,12 @@
   <library name="Generated files" type="javaScript">
     <properties>
       <sourceFilesUrls>
-        <item url="file://$PROJECT_DIR$/tests/firstTests-compiled.js" />
+        <item url="file://$PROJECT_DIR$/tests/FileReaderSpec-compiled.js" />
+        <item url="file://$PROJECT_DIR$/tests/ES6CompilerSpec-compiled.js" />
       </sourceFilesUrls>
     </properties>
     <CLASSES>
+      <root url="file://$PROJECT_DIR$/tests/FileReaderSpec-compiled.js" />
       <root url="file://$PROJECT_DIR$/tests/ES6CompilerSpec-compiled.js" />
     </CLASSES>
     <JAVADOC />
