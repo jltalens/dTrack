@@ -1,12 +1,26 @@
-# dGraph
+dTrack
+=====
 
-dGraph is a tool to build dependency graphs for AMD modules.
+dTrack is a Node.js app to output all the dependencies in each one of the modules of your project.
+The first goal is to track CommonJS dependency types followed by ES6 and AMD ones.   
 
-It will receive the entry file as a parameter. Optionally it will accept a requirejs config file for the module ID => file map.
+#Motivation
 
-##Example output
-```
-/usr/local/bin/dtrack test/support/sampleAppConfig/app.js test/support/sampleAppConfig/config.js
+When I started working in big JS projects I missed having a more clear picture of which modules are related to which ones.
+First I couldn't find any tool that could output a dependency graph of my projects in a clear way (okay... I really didn't look 
+hard for one as I wanted to build it anyway) so I started to build my own. Also it's a good opportunity to learn some stuff on the way:
 
-digraph dependencies { "app.js" -> "jquery";"app.js" -> "Router";"app.js" -> "PageController";"app.js" -> "BasePage";"Router" -> "Backbone";"PageController" -> "Pages";"PageController" -> "BasePage";"PageController" -> "Repository";"BasePage" -> "PageCommon";"BasePage" -> "Providers";"PageCommon" -> "jquery";"PageCommon" -> "underscore";"Providers" -> "jquery";"Providers" -> "Repository"; }
-```
+- ES6
+- Some transpiler to ES5([babel](https://babeljs.io/) in this case)
+- Building npm libraries.
+
+For the graph I will just output the dependencies in [dot](http://www.graphviz.org/content/dot-language) format so 
+it can be piped to the program itself, I will add an example.
+
+#Example
+TBD
+
+#Install
+Still in early stage to have an installable but it will be published as an npm module.
+
+
