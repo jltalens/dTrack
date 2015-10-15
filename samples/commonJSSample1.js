@@ -1,6 +1,6 @@
 (function() {
   'use strict';
-  var require = require('file');
+  var file = require('file');
   function example() {
     return true;
   }
