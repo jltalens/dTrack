@@ -9,8 +9,10 @@
         <item url="file://$PROJECT_DIR$/lib/tokenizer/Tokenizer-compiled.js" />
         <item url="file://$PROJECT_DIR$/lib/fileReader/FileReader-compiled.js" />
         <item url="file://$PROJECT_DIR$/samples/commonJSSample1-compiled.js" />
+        <item url="file://$PROJECT_DIR$/lib/tracker/DependencyTrackerSpec-compiled.js" />
         <item url="file://$PROJECT_DIR$/lib/tokenAnalysers/CommonJSAnalyser-compiled.js" />
         <item url="file://$PROJECT_DIR$/samples/commonJSSample2-compiled.js" />
+        <item url="file://$PROJECT_DIR$/lib/tracker/DependencyTracker-compiled.js" />
       </sourceFilesUrls>
     </properties>
     <CLASSES>
@@ -25,8 +27,10 @@
       <root url="file://$PROJECT_DIR$/lib/tokenizer/Tokenizer-compiled.js" />
       <root url="file://$PROJECT_DIR$/lib/fileReader/FileReader-compiled.js" />
       <root url="file://$PROJECT_DIR$/samples/commonJSSample1-compiled.js" />
+      <root url="file://$PROJECT_DIR$/lib/tracker/DependencyTrackerSpec-compiled.js" />
       <root url="file://$PROJECT_DIR$/lib/tokenAnalysers/CommonJSAnalyser-compiled.js" />
       <root url="file://$PROJECT_DIR$/samples/commonJSSample2-compiled.js" />
+      <root url="file://$PROJECT_DIR$/lib/tracker/DependencyTracker-compiled.js" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
