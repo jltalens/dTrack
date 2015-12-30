@@ -12,7 +12,7 @@
     "esprima": "~1.2.2"
   },
   "scripts": {
-    "test": "mocha --compilers js:babel-register **/*Spec.js"
+    "test": "mocha --compilers js:babel-register lib/**/*Spec.js"
   },
   "devDependencies": {
     "babel": "^6.1.5",
