@@ -1,0 +1,1 @@
+- Every time I find a module I yield a new class as child so I can detach the representation of the data structure
