@@ -1,8 +1,8 @@
 dTrack
 =====
 
-dTrack is a Node.js app to output all the dependencies in each one of the modules of your project.
-The first goal is to track CommonJS dependency types followed by ES6 and AMD ones.   
+dTrack is a Node.js app to output all the dependencies in each one of the ES6 modules of your project.
+
 
 #Motivation
 
