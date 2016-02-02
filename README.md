@@ -1,7 +1,7 @@
 dTrack
 =====
 
-dTrack is a Node.js app to output all the dependencies in each one of the ES6 modules of your project.
+dTrack is a Node.js app that outputs all the dependencies for projects using ES6 imports.
 
 
 #Motivation
@@ -11,16 +11,36 @@ First I couldn't find any tool that could output a dependency graph of my projec
 hard for one as I wanted to build it anyway) so I started to build my own. Also it's a good opportunity to learn some stuff on the way:
 
 - ES6
-- Some transpiler to ES5([babel](https://babeljs.io/) in this case)
+- Some transpiler to ES5 ([babel](https://babeljs.io/) in this case)
 - Building npm libraries.
 
-For the graph I will just output the dependencies in [dot](http://www.graphviz.org/content/dot-language) format so 
-it can be piped to the program itself, I will add an example.
+Internally is using a nested list representation of the dependencies so I can detach the program output and use different "translators" if needed,
+right now the only one outputs the diagram in dot format.
 
-#Example
-TBD
+#Usage
+
+Probably the ~~most~~ only interesting one is outputting the dependency tree of an ES6 app that can be directly piped to
+dot to produce the printable version:
+
+```bash
+$ /usr/local/bin/dTrack -i lib/dTrack.js -f dot | dot -Tjpeg -odTrack.jpg
+```
+
+![pdf output](https://raw.githubusercontent.com/jltalens/dTrack/es6-outside-in/samples/dTrack.jpg)
+
+## Options
+- `-i [input_file]`: entry point of the app
+- `-f [output_format]`: output format, for now only `dot` is accepted.
+
+##Dependencies
+You'll need [graphviz](http://graphviz.org/download..php) installed.
 
 #Install
-Still in early stage to have an installable but it will be published as an npm module.
+Still in early stage. I'll have a npm module soon. For now cloning this bad boy and doing:
 
+```bash
+npm link
+```
+
+should do the trick, leaving the node executable in `/usr/local/bin/dTrack`
 
