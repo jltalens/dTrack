@@ -3,6 +3,8 @@ dTrack
 
 [![Build Status](https://api.travis-ci.org/jltalens/dTrack.svg?branch=es6-outside-in)](https://travis-ci.org/jltalens/dTrack)
 [![Code Climate](https://codeclimate.com/github/jltalens/dTrack/badges/gpa.svg)](https://codeclimate.com/github/jltalens/dTrack)
+[![Test Coverage](https://codeclimate.com/github/jltalens/dTrack/badges/coverage.svg)](https://codeclimate.com/github/jltalens/dTrack/coverage)
+[![Issue Count](https://codeclimate.com/github/jltalens/dTrack/badges/issue_count.svg)](https://codeclimate.com/github/jltalens/dTrack)
 
 dTrack is a Node.js app that outputs all the dependencies for projects using ES6 imports.
 
