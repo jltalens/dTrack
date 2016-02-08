@@ -31,7 +31,7 @@ dot to produce the printable version:
 $ /usr/local/bin/dTrack -i lib/dTrack.js -f dot | dot -Tjpeg -odTrack.jpg
 ```
 
-![pdf output](https://raw.githubusercontent.com/jltalens/dTrack/es6-outside-in/samples/dTrack.jpg)
+![pdf output](https://raw.githubusercontent.com/jltalens/dTrack/master/samples/dTrack.jpg)
 
 ## Options
 - `-i [input_file]`: entry point of the app
