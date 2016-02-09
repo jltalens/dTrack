@@ -1,4 +1,4 @@
-import * as whatever from './es6-no-import';
+import * as whatever from './no-import';
 import path from 'path';
 
 export default {};
