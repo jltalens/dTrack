@@ -34,7 +34,8 @@ $ /usr/local/bin/dTrack lib/dTrack.js -f dot | dot -Tjpeg -odTrack.jpg
 ![pdf output](https://raw.githubusercontent.com/jltalens/dTrack/master/samples/dTrack.jpg)
 
 ## Options
-- `-f [output_format]`: output format, for now only `dot` is accepted.
+- `-f dot`: output format, for now only `dot` is accepted.
+- `-t [es6|commonJS]`: import format used in the project. ES6 import or CommonJS requires currently supported.  
 
 ##Dependencies
 You'll need [graphviz](http://graphviz.org/download..php) installed.
