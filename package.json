@@ -11,7 +11,8 @@
     "url": "https://github.com/jltalens/dTrack"
   },
   "dependencies": {
-    "esprima": "~2.7"
+    "esprima": "~2.7",
+    "minimist": "^1.2.0"
   },
   "scripts": {
     "build": "mkdir -p es5/bin es5/lib && ./node_modules/babel-cli/bin/babel.js lib --out-dir es5/lib && ./node_modules/babel-cli/bin/babel.js bin --out-dir es5/bin",
